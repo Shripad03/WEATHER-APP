@@ -1,0 +1,58 @@
+
+    <div  class="background" ></div>
+   
+   
+   <div class="ceter-card card-tile" [ngClass]="{'animated': aniObj.chartShow == false, 'rubberBand': aniObj.chartShow == false}">
+        <span class="cloud-icon-pos cloud-icon-txt"> Whether </span> 
+      <i class="material-icons cloud-icon-pos">
+         cloud </i>
+            <div  *ngIf="aniObj.chartShow" >
+                <mat-card [ngClass]="{'animated': aniObj.chartShow == true,  'bounceInDown': aniObj.chartShow == true }">
+                    <div  class="container" style="display: block">
+                        <canvas baseChart *ngIf="aniObj.chartShow"
+                                [datasets]="abcChart"
+                                [labels]="chartMonth"
+                                [options]="barChartOptions"
+                                [legend]="barChartLegend"
+                                [chartType]="barChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                      </div>
+                     <div class="request-info">
+                          <div class="row"><label>Request Url : </label>  <span> {{reqyestApi.url }} </span> </div>
+                          <div  class="row"><label>Request Data: </label> <span> {{abcChart[0].data}} </span> </div>
+                      </div>
+                    <button class="btn-color" (click)="backToFun()" mat-raised-button>Back</button>
+                  </mat-card> 
+              </div>
+
+        <mat-card  *ngIf="!aniObj.chartShow"  [ngClass]="{'animated': aniObj.fromDone == true,  'bounceOutUp': aniObj.fromDone == true,  'animated': aniObj.chartShow == false, 'bounceInDown': aniObj.chartShow == false}">
+          <div class="container">    
+              <mat-form-field  [ngClass]="{'animated': aniObj.animateEle1 == true,  'shake': aniObj.animateEle1 == true }">
+                <mat-select [(ngModel)]="obj.weatherType" name="weatherType"  placeholder="Weather Type">
+                  <mat-option value="Tmax">Max temperature</mat-option>
+                  <mat-option value="Tmin">Min temperature</mat-option>
+                  <mat-option value="Rainfall">Rainfall</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+
+              <mat-form-field  [ngClass]="{'animated': aniObj.animateEle2 == true,  'shake': aniObj.animateEle2 == true }">
+                  <mat-select placeholder="country"  [(ngModel)]="obj.country" name="country">
+                    <mat-option value="UK">UK</mat-option>
+                    <mat-option value="England">England</mat-option>
+                    <mat-option value="Scotland">Scotland</mat-option>
+                    <mat-option value="Wales"> Wales</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field  [ngClass]="{'animated': aniObj.animateEle3 == true,  'shake': aniObj.animateEle3 == true }">
+                    <mat-select placeholder="select year" [(ngModel)]="obj.year" name="year">
+                      <mat-option value="{{y}}" *ngFor="let y of YearsLabel">{{y}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <button class="btn-color" (click)="submitFrom(obj)" mat-raised-button>Submit</button>
+
+            </div>
+          </mat-card>
+  </div>

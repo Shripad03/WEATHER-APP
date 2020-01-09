@@ -1,0 +1,92 @@
+
+  .background {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(../../../assets/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover
+  }
+  
+  .ceter-card {
+    width: 45%;
+    margin:8%  auto 0 auto;
+    display: block;
+    margin-top: 8%;
+    position: relative;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container > * {
+    width: 100%;
+  }
+  
+
+  .form-head {
+    position: relative;
+  }
+  .btn-color {
+    background: #CDDC39;
+    color: #fff;
+  }
+
+  .cloud-icon-pos {
+    float: none;
+    margin: 0 auto;
+    font-size: 14vw;
+    text-shadow: 1px 1px 11px #787676;
+    line-height: 0;
+    color: #fff;
+    transform: translate(-50%,0);
+    position: absolute;
+    left: 50%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    display: table;
+  }
+  .cloud-icon-txt{
+    padding-top: 2%;
+    font-size: 1.8vw;
+    z-index: 3;
+    color: #847f7f;
+    text-shadow: none;
+  }
+  
+  .card-tile {
+    padding-top:6%;
+  }
+  
+
+  .request-info {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #cdced1;
+  }
+  .request-info label {
+    font-size: 9px;
+    text-shadow: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.request-info .row {
+  margin: 5px 0;
+}
+  
+  
+  
+@media screen and (max-width: 700px) {
+  .request-info {
+    display: none;
+  }
+
+}

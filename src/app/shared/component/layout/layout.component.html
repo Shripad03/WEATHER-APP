@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="false">
+    <mat-toolbar class="name">Jitendra Jahagirdar</mat-toolbar>
+  <div class="jitendra-info">
+    <div class="email-info"> <label class="title"> Email : </label><span class="bobile">  jitu123435@gmail.com</span></div>
+    <div class="skill-info"> <label class="title"> UI Developer : </label><span class="bobile">  6.1</span></div>
+  <div class="mo-info"> <label class="title"> Mobile : </label><span class="bobile"> 9860885045</span></div>
+
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span> Jitendra </span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
